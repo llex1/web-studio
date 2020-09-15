@@ -30,7 +30,7 @@
   @include adaptive(768px) {
     top: 120px;
   }
-  width: 450px;
+  max-width: 450px;
   @include adaptive(1200px) {
     top: 140px;
     width: 528px;

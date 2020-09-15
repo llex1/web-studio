@@ -10,16 +10,23 @@
 .clients-list {
   @include flex(space-between);
   flex-wrap: wrap;
-  &>li:not(:nth-last-child(-n+2)){
+  &>li:not(:last-child) {
     margin-bottom: 30px;
-  }
-  @include adaptive(768px) {
-    &>li:nth-last-child(-n+3) {
+    @include adaptive(480px){
       margin-bottom: 0;
     }
   }
-  @include adaptive(1200px) {
-    &>li:nth-child(n){
+  &>li:not(:nth-last-child(-n+2)){
+    margin-bottom: 30px;
+    @include adaptive(768px){
+      margin-bottom: 0;
+    }
+  }
+  &>li:not(:nth-last-child(-n+3)) {
+    @include adaptive(748px){
+      margin-bottom: 30px;
+    }
+    @include adaptive(1200px){
       margin-bottom: 0;
     }
   }

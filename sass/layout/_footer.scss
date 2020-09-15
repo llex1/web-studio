@@ -77,7 +77,10 @@
   }
 
   &-input {
-    max-width: 450px;
+    max-width: 100%;
+    @include adaptive(480px) {
+      width: 450px;
+    }
     @include adaptive(1200px) {
       width: 358px;
     }
