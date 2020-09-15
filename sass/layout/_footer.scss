@@ -1,0 +1,117 @@
+.footer-list {
+  @include flex(center, center, column);
+  
+  @include adaptive(768px) {
+    @include flex(space-around, flex-start);
+    flex-wrap: wrap;
+  }
+  @include adaptive(1200px) {
+    @include flex(space-between, flex-start);
+  }
+  padding-top: 60px;
+  padding-bottom: 60px;
+
+
+  & > li:not(:last-child) {margin-bottom: 60px;
+    @include adaptive(1200px){
+      margin-bottom: 0;
+    }
+  }
+  & > li:not(:first-child) {
+    @include adaptive(1200px) {
+      margin-top: 12px;
+    }
+  }
+  & li:first-child {
+    text-align: center;
+    @include adaptive(1200px) {
+      text-align: left;
+    }
+  }
+}
+.footer-address {
+  @include flex(flex-start, stretch, column);
+  
+  &-item {
+    color: $footer-address-color;
+    @include font(400, 14px, 1.71);
+    font-style: normal;;
+  }
+  &-item:first-child {
+    color: $white-color;
+  }
+  &-item:not(:last-child){
+    margin-bottom: 9px;
+  }
+}
+.footer-join-title {
+  @include font(700, 14px, 1.42);
+  text-transform: uppercase;
+  text-align: center;
+  @include adaptive(1200px) {
+    text-align: left;
+  }
+  margin-top: 0;
+  @include adaptive(768px, 1199px) {
+    margin-top: 5px;
+  }
+  margin-bottom: 20px;
+  color: $white-color;
+}
+.footer-form-subscription {
+  @include flex(center, center, column);
+  @include adaptive(1200px) {
+    @include flex(center, flex-end, row);
+  }
+
+  &-title {
+    @include font(700, 14px, 1.42);
+    text-transform: uppercase;
+    text-align: center;
+    @include adaptive(1200px) {
+      text-align: left;
+    }
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: $white-color;
+  }
+
+  &-input {
+    width: 450px;
+    @include adaptive(1200px) {
+      width: 358px;
+    }
+    height: 50px;
+    padding: 15px 0 15px 16px;
+    margin-bottom: 20px;
+    @include adaptive(1200px) {
+      margin-bottom: 0;
+      margin-right: 12px;
+    }
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+    background-color: $footer-color;
+    @include font(400, 16px, 1.25);
+    color: $white-color;
+    transition: $transition-only-color;
+  }
+  &-input:focus {
+    outline-style: none;
+    border-color: $main-color;
+  }
+
+  &-btn__icon{
+    fill: white;
+  }
+}
+.subscription-btn {
+  @include flex(center, flex-end);
+
+  &:hover {
+    cursor: pointer;
+  }
+  & > span {
+    margin-right: 10px;
+  }
+
+}

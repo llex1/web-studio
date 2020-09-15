@@ -1,0 +1,33 @@
+.what-wedo{
+  display: none;
+  @include adaptive(1200px) {
+    display: block;
+  }
+}
+
+.what-wedo-title {
+  @include font(700, 36px, 1.16);
+  text-align: center;
+  margin: 0px 0px 50px;
+}
+.what-wedo-list{
+  @include flex(space-between);
+
+  &-item {
+    position: relative;
+  }
+  &-title {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    margin: 0;
+    padding-top: 27px;
+    padding-bottom: 27px;
+    @include font(700, 14px, 1.15);  
+    text-align: center;
+    text-transform: uppercase;
+    color: $white-color;
+    background: rgba(47, 48, 58, 0.8);
+  }
+
+}

@@ -1,0 +1,52 @@
+.clients-title{
+  @include font(700, 36px, 1.16);
+  text-align: center;
+  margin: 0px 0px 30px;
+  @include adaptive(1200px) {
+    margin: 0px 0px 50px;
+  }
+}
+
+.clients-list {
+  @include flex(space-between);
+  flex-wrap: wrap;
+  &>li:not(:nth-last-child(-n+2)){
+    margin-bottom: 30px;
+  }
+  @include adaptive(768px) {
+    &>li:nth-last-child(-n+3) {
+      margin-bottom: 0;
+    }
+  }
+  @include adaptive(1200px) {
+    &>li:nth-child(n){
+      margin-bottom: 0;
+    }
+  }
+}
+.clients-list-link {
+  @include flex(center);
+  width: 210px;
+  @include adaptive(768px){
+    width: 226px;
+  }
+  @include adaptive(1200px){
+    width: 170px;
+  }
+  height: 90px;
+  border: 1px solid $social-icon-color;
+  border-radius: 4px;
+  transition: $transition-only-color;
+
+  &:hover,
+  &:focus, 
+  &:active {border-color: $main-color}
+  &:hover &__icon,
+  &:focus &__icon,
+  &:active &__icon {fill: $main-color}
+  &__icon {
+  fill: $social-icon-color;
+  transition: $transition-main;
+  }
+
+}

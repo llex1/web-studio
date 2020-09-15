@@ -1,0 +1,197 @@
+.header-wrapper {
+  height: 80px;
+  border-bottom: 1px solid $header-border;
+  position: relative;
+}
+.header {
+  height: inherit;
+  @include flex(space-between);
+  @include adaptive(1200px){
+    @include flex(flex-start);
+  }
+}
+
+/* button for mobile <----------------------------- */
+.header-menu-button {
+  display: block;
+  @include adaptive(768px) {
+    display: none;
+  }
+  border: none;
+  background-color: white;
+  padding: 3px;
+  overflow: visible;
+  & {
+    .header__icon_close {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: $transition-main;
+    }
+  }
+  & {
+    .header__icon_burger {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: unset;
+      transition: $transition-main;
+    }
+  }
+  &.is-open {
+    .header__icon_burger{
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+  }
+  &.is-open {
+    .header__icon_close{
+      opacity: 1;
+      visibility: visible;
+      pointer-events: unset;
+    }
+  }
+}
+/* END button for mobile <----------------------------- */
+.header-menu {
+  width: 100%;
+  padding: 60px 15px;
+  position: absolute;
+  z-index: 100;
+  bottom: 0;
+  left: 0;
+  transform: translateY(100%);
+  @include flex(center, center, column);
+
+  background-color: $white-color;
+  box-shadow: 
+  0px 4px 8px rgba(0, 0, 0, 0.04), 
+  0px 2px 4px rgba(0, 0, 0, 0.08), 
+  0px 1px 3px rgba(0, 0, 0, 0.16);
+  opacity: 0;
+  // visibility: hidden;
+  pointer-events: none;
+  transition: $transition-only-color;
+  &.vis-none {
+    visibility: hidden;
+    @include adaptive(768px){
+      visibility: visible;
+    }
+  }
+
+  &.is-open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: unset;
+    transition: $transition-only-color;
+  }
+
+/* повертаємо до нормального вигляду */
+
+  @include adaptive(768px) {
+    position: static;
+    @include flex();
+    width: auto;
+    padding: 0;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: unset;
+    transform: translateY(0);
+    box-shadow: unset;
+  }
+  @include adaptive(1200px){
+    @include flex(space-between);
+    width: 100%;
+  }
+}
+.header-nav {
+  @include flex(center, center);
+}
+.header-nav-list {
+  @include flex(center, center, column);
+  @include adaptive(768px){
+    @include flex(center, center);
+    margin-right: 84px;
+  }
+  @include font(500, 14px, 1.14, 0.02em);
+  margin-bottom: 60px;
+  @include adaptive(768px){
+    margin-bottom: 0;
+  }
+
+  .header-nav-list-item:not(:last-child) {
+    margin-bottom: 40px;
+    @include adaptive(768px){
+    margin-bottom: 0;
+    margin-right: 50px;
+    }
+  }
+  .header-nav-list-item {
+      position: relative;
+
+  &.active::before {
+    content: "";
+    position: absolute;
+    @include adaptive(768px){
+      bottom: -32px;
+    }
+    bottom: -8px;
+    width: 100%;
+    height: 4px;
+    border-radius: 2px;
+    background-color: $main-color;
+  }  
+  &>a {
+    color: $black-color;
+    transition: $transition-main;
+    }
+  &>a:hover, &>a:focus, &>a:active {
+    color: $main-color;
+    }
+  &.active>a {
+    color: $main-color;
+    }
+  } 
+}
+.header-address-list {
+  @include flex(center, center, column);
+  @include adaptive(768px){
+    @include flex(flex-start, flex-start, column);
+    flex-wrap: wrap;
+  }
+  @include adaptive(1200px) {
+    @include flex(flex-start);
+  }
+}
+.header-address-list-item {
+  &:not(:last-child) {
+    margin-bottom: 16px;
+    @include adaptive(768px) {
+      margin-bottom: 10px;
+    }
+    @include adaptive(1200px) {
+      margin-bottom: 0;
+      margin-right: 30px;
+    }
+  }
+  &>a {
+    @include flex(center, center);
+    @include font(500, 14px, 1.14, 0.02em);
+    font-style: normal;
+    color: $grey-color;
+    transition: $transition-main;
+
+    &:hover,
+    &:focus {color: $main-color;}
+    &:hover .header-address-list__icon,
+    &:focus .header-address-list__icon {fill: $main-color;}
+  }
+  .header-address-list__icon {
+    fill: $grey-color;
+    max-height: 16px;
+    max-width: 16px;
+    margin-right: 10px;
+    transition: $transition-main;
+  }
+
+}

@@ -1,0 +1,25 @@
+.hero-wrapper {
+  background-image: linear-gradient(
+      rgba(47, 48, 58, .4), 
+      rgba(47, 48, 58, .4)
+      ), 
+      url("../images/hero.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: $hero-color;
+}
+.hero {
+  @include flex(center, center, column);
+  height: 400px;
+  &-title {
+    color: $white-color;
+    @include font(900, 26px, 1.62, 0.06em);
+    @include adaptive(1200px) {
+      @include font(900, 44px, 1.36, 0.06em);
+    }
+    text-align: center;
+    text-transform: uppercase;
+  }
+} 
+
+

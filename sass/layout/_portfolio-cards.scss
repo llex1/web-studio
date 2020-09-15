@@ -1,0 +1,87 @@
+.portfolio-cards-list {
+  @include flex(space-between, flex-start);
+  @include adaptive(1200px) {
+    @include flex();
+  }
+  flex-wrap: wrap;
+
+  &-item {
+  background-color: $wrapper-color;
+  transition: $transition-main;
+  }
+
+  &-wrapper {
+    position: relative;
+    overflow: hidden;
+  }
+  &-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 24px;
+    @include flex();
+    height: 100%;
+    @include font(400, 18px, 1.56);
+    color: $white-color;
+    background: rgba(33, 150, 243, 0.9);
+
+    transform: translateY(100%);
+    transition: $transition-main;
+  }
+  &-item:hover,
+  &-item:focus,
+  &-item:active {
+    cursor: pointer;
+    box-shadow: 
+    0px 1px 1px rgba(0, 0, 0, 0.12), 
+    0px 4px 4px rgba(0, 0, 0, 0.06), 
+    1px 4px 6px rgba(0, 0, 0, 0.16);
+  }
+  &-wrapper:hover &-overlay,
+  &-wrapper:focus &-overlay,
+  &-wrapper:active &-overlay{
+    transform: translateY(0);
+  }
+  &-item:not(:last-child) {
+    margin-bottom: 30px;
+    @include adaptive(678px) {
+      margin-bottom: 0;
+    }
+  }
+  &-item:not(:nth-last-child(-n+2)){
+    @include adaptive(678px) {
+      margin-bottom: 30px;
+    }
+    @include adaptive(1200px) {
+      margin-bottom: 0;
+    }
+  }
+  &-item:not(:nth-last-child(-n+3)){
+    @include adaptive(1200px) {
+      margin-bottom: 30px;
+    }
+  }
+  &-item:not(:nth-child(3n)) {
+    @include adaptive(1200px) {
+      margin-right: 30px ;
+    }
+  }
+}
+
+.portfolio-cards-footer{
+  margin-left: 1px;
+  margin-bottom: 1px;
+  background-color: $white-color;
+  width: calc(100% - 2px);
+  padding: 20px 24px;
+}
+.portfolio-cards-description {
+  @include font(700, 18px, 2, 0.06em);
+  margin: 0px;
+}
+.portfolio-cards-category {
+  @include font(400, 16px, 1.87);
+  color: $grey-color;
+  margin: 0px;
+}

@@ -1,0 +1,41 @@
+@import "./utils/variables";
+@import "./utils/mixins";
+@import "./base/base-reset";
+
+/* BODY <------------------------------------- */
+@import "./layout/body";
+
+ /* components <------------------------------------- */
+@import "./components/hidden";
+@import "./components/social-list";
+@import "./components/wrapper";
+@import "./components/contrainer";
+@import "./components/btn";
+@import "./components/logo";
+
+/* header <------------------------------------------ */
+@import "./layout/header";
+
+/* hero <------------------------------------------ */
+@import "./layout/hero";
+
+/* advantages <------------------------------------------ */
+@import "./layout/advantages";
+
+/* what wedo <------------------------------------------ */
+@import "./layout/what-wedo";
+
+/* our team <------------------------------------------ */
+@import "./layout/our-team";
+
+/* clients <------------------------------------------ */
+@import "./layout/clients";
+
+/* footer <------------------------------------- */
+@import "./layout/footer";
+
+
+
+/* modal <------------------------------------- */
+@import "./components/modal";
+

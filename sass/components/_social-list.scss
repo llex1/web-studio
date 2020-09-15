@@ -1,0 +1,37 @@
+.social-list {
+  @include flex(space-between);
+  margin: 0 auto;
+  width: 206px;
+}
+.social-list-link {
+  @include flex();
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  transition: $transition-main;
+  
+  .footer & {
+    background-color: rgba(255, 255, 255, 0.1);
+    transition: $transition-main;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: $main-color;
+  }
+
+  &:hover .social-list-link__icon,
+  &:focus .social-list-link__icon {
+    fill: $white-color;
+  }
+}
+.social-list-link__icon {
+  width: 20px;
+  height: 20px;
+  fill: $social-icon-color;
+  transition: $transition-main;
+  
+  .footer & {
+    fill: $white-color;
+  }
+}

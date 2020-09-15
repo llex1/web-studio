@@ -1,0 +1,39 @@
+@import "./utils/variables";
+@import "./utils/mixins";
+@import "./base/base-reset";
+
+/* BODY <------------------------------------- */
+@import "./layout/body";
+
+ /* components <------------------------------------- */
+@import "./components/hidden";
+@import "./components/social-list";
+@import "./components/wrapper";
+@import "./components/contrainer";
+@import "./components/btn";
+@import "./components/logo";
+
+/* header <------------------------------------------ */
+@import "./layout/header";
+
+/* portfolio <------------------------------------------ */
+@import "./layout/portfolio-btn";
+@import "./layout/portfolio-cards";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* footer <------------------------------------- */
+@import "./layout/footer";
+
