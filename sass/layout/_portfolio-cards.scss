@@ -8,6 +8,19 @@
   &-item {
   background-color: $wrapper-color;
   transition: $transition-main;
+
+  & a {
+    width: 450px;
+    height: 294px;
+    @include adaptive(768px){
+      width: 354px;
+      height: 294px;
+    }
+    @include adaptive(1200px){
+      width: 370px;
+    }
+  } 
+
   }
 
   &-wrapper {
