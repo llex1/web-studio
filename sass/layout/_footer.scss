@@ -77,7 +77,7 @@
   }
 
   &-input {
-    width: 450px;
+    max-width: 450px;
     @include adaptive(1200px) {
       width: 358px;
     }
