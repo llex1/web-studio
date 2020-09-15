@@ -524,9 +524,18 @@ body {
 .portfolio-cards-list {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
-  flex-direction: row;
+  align-items: center;
+  flex-direction: column;
   flex-wrap: wrap;
+}
+
+@media screen and (min-width: 480px) {
+  .portfolio-cards-list {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: row;
+  }
 }
 
 @media screen and (min-width: 1200px) {
@@ -544,8 +553,7 @@ body {
 }
 
 .portfolio-cards-list-item a {
-  width: 450px;
-  height: 294px;
+  max-width: 450px;
 }
 
 @media screen and (min-width: 768px) {

@@ -12,7 +12,7 @@
   flex-wrap: wrap;
   &>li:not(:last-child) {
     margin-bottom: 30px;
-    @include adaptive(480px){
+    @include adaptive(450px){
       margin-bottom: 0;
     }
   }

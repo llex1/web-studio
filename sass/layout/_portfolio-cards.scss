@@ -1,5 +1,8 @@
 .portfolio-cards-list {
-  @include flex(space-between, flex-start);
+  @include flex(space-between, center, column);
+  @include adaptive(480px){
+    @include flex(space-between, flex-start);
+  }
   @include adaptive(1200px) {
     @include flex();
   }
@@ -10,8 +13,7 @@
   transition: $transition-main;
 
   & a {
-    width: 450px;
-    height: 294px;
+    max-width: 450px;
     @include adaptive(768px){
       width: 354px;
       height: 294px;

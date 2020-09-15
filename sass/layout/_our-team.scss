@@ -39,16 +39,13 @@
   } 
 
   & > li  img {
-    width: 450px;
-    height: 460px;
+    max-width: 450px;
     margin-bottom: 30px;
     @include adaptive(768px){
       width: 354px;
-      height: 374px;
     }
     @include adaptive(1200px){
       width: 270px;
-      height: 260px;
     }
   }
 
