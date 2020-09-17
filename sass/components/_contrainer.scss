@@ -1,5 +1,8 @@
 .container {
-  max-width: 480px;
+  min-width: 320px;
+  @include adaptive(480px){
+    max-width: 480px;
+  }
   @include adaptive(768px) {
     max-width: 768px;
   }

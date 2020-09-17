@@ -90,6 +90,7 @@
 
   @include adaptive(768px) {
     position: static;
+    z-index: 0;
     @include flex();
     width: auto;
     padding: 0;
